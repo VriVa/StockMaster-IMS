@@ -17,6 +17,8 @@ def read_root():
 
 # Include user manager routes
 from app.routes import userManager
+from app.routes import dashboardManager
+from app.routes import navigationManager
 
 app.include_router(userManager.router)
 
@@ -29,3 +31,5 @@ app.include_router(productManager.router)
 from app.routes import warehouseManager
 
 app.include_router(warehouseManager.router)
+app.include_router(dashboardManager.router)
+app.include_router(navigationManager.router)
