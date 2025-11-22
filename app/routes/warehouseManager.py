@@ -13,7 +13,7 @@ router = APIRouter(prefix="/warehouses", tags=["warehouses"])
 @router.get("/")
 def read_warehouses(session: Session = Depends(get_session)):
     warehouses = session.exec(select(Warehouse)).all()
-    return List(warehouses)
+    return list(warehouses)
 
 
 @router.post("/")

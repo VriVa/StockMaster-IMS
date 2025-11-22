@@ -406,3 +406,17 @@ def adjust_stock(
         "system_qty": system_qty,
         "adjustment_qty": adjustment_qty,
     }
+
+
+@router.get("/stock_ledger/")
+def get_stock_ledger(
+    warehouse_id: int,
+    session: Session = Depends(get_session),
+):
+    ledger_entries = session.exec(
+        select(StockLedger).where(
+            (StockLedger.from_warehouse_id == warehouse_id)
+            | (StockLedger.to_warehouse_id == warehouse_id)
+        )
+    ).all()
+    return ledger_entries
