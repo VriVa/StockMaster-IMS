@@ -61,7 +61,6 @@ export const getDashboardKpis = async () => {
   try {
     return await safeFetch('/dashboard/kpis')
   } catch (e) {
-    // fallback: compute simple KPIs from mocks
     return {
       total_products: products.length,
       low_stock_items: stock.filter((s) => s.free_to_use <= 5).length,
