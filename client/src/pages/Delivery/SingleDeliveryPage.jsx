@@ -308,7 +308,7 @@ const SingleDeliveryPage = () => {
   }, []);
 
   const handleBack = useCallback(() => {
-    navigate('/operations/deliveries');
+    navigate('/deliveries');
   }, [navigate]);
 
   const handleAddProduct = useCallback(() => {
