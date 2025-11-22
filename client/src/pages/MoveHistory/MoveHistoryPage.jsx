@@ -213,7 +213,9 @@ const App = () => {
         reference: tx.reference_number,
         date: tx.scheduled_date
           ? new Date(tx.scheduled_date).toLocaleDateString()
-          : '-',
+          : tx.created_at
+          ? new Date(tx.created_at).toLocaleDateString()
+          : 'N/A',
         contact: tx.contact || 'Internal',
         fromWarehouseId: tx.from_warehouse,
         toWarehouseId: tx.to_warehouse,
