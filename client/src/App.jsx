@@ -5,7 +5,7 @@ import ProtectedRoute from './components/ProtectedRoute'
 // Auth pages
 import LoginPage from './pages/Auth/LoginPage'
 import SignupPage from './pages/Auth/SignupPage'
-
+import CreateWarehouse from './pages/Warehouse/CreateWarehouse'
 // Pages
 import DashboardPage from './pages/Dashboard/DashboardPage'
 
@@ -191,6 +191,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <CreateInternalTransfer />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/warehouses/new"
+            element={
+              <ProtectedRoute>
+                <CreateWarehouse />
               </ProtectedRoute>
             }
           />
